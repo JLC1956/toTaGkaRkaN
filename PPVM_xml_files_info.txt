@@ -1,0 +1,47 @@
+The XML files contained inside this folder are edited versions
+of ePub files downloaded from Wikisource,
+the master file being located at URL "https://ta.wikisource.org/wiki/புறப்பொருள்_வெண்பாமாலை"
+for which a short form is "https://ta.wikisource.org/s/9b49"
+
+The individual files have been downloaded in ePub format as
+புறப்பொருள்_வெண்பாமாலை_வெட்சிப்_படலம்.epub
+புறப்பொருள்_வெண்பாமாலை_கரந்தைப்_படலம்.epub
+....................
+
+Each .epub file has been opened in oXygen using the Archive Browser
+(available under Window | Show View | Archive Browser)
+
+Inside the .epub file, the
+OPS/c0_____________________________________.xhtml
+file is opened, and saved as a new file, with .xhtml inside another location
+
+After that,
+the file is saved as .xml file,
+the "<!DOCTYPE html>" is removed
+and the top opening tag is changed from
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ta" dir="ltr">
+to <pseudo-html>oXygen)
+(the closing tag is automatically changed by oXygen)
+An "offset" element, containing an appropriate numerical value, is introduced before the "head" element
+(the appropriate value of the offset sometimes takes several attempts to be discovered)
+
+After that, a second .xml file is obtained by running an .xslt script (namely "process_wikimUlam_expanded.xslt")
+on the first .xml file and by making additional manual adjustments
+(such as:
+ -- suppressing extraneous "rank" elements;
+ -- replacing some "title" elements by "p" elements;
+ -- introducing "cUttiram" elements]
+
+
+Example (6th section)
+Stage_1: புறப்பொருள்_வெண்பாமாலை_உழிஞைப்_படலம்.epub [downloaded from ""]
+Stage_2: OPS/c0_____________________________________.xhtml [extracted]
+Stage_3: PPVM_06.xhtml [result of "save as"]
+Stage_4: PPVM_06a.xml [the "offset" element is "<offset>92</offset>"]
+Stage_5: PPVM_06_x.xml [obtained by running script "process_wikimUlam_expanded.xslt" and making manual adjustments to the result]
+
+
+
+
+
+
